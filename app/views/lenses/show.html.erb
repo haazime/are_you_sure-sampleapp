@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lens.name %>
+</p>
+
+<p>
+  <strong>Mm:</strong>
+  <%= @lens.mm %>
+</p>
+
+<p>
+  <strong>F:</strong>
+  <%= @lens.f %>
+</p>
+
+<p>
+  <strong>Close up:</strong>
+  <%= @lens.close_up %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @lens.note %>
+</p>
+
+<%= link_to 'Edit', edit_lens_path(@lens) %> |
+<%= link_to 'Back', lenses_path %>

@@ -1,0 +1,40 @@
+<%= are_you_sure_form_for(@lens) do |f| %>
+  <%= f.confirmation message: 'この内容でよろしいですか？' %>
+
+  <% if @lens.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lens.errors.count, "error") %> prohibited this lens from being saved:</h2>
+
+      <ul>
+      <% @lens.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field_or_confirm :name %>
+  </div>
+  <div class="field">
+    <%= f.label :mm, width: 2 %><br>
+    <%= f.text_field_or_confirm :mm %>
+  </div>
+  <div class="field">
+    <%= f.label :f %><br>
+    <%= f.text_field_or_confirm :f %>
+  </div>
+  <div class="field">
+    <%= f.label :close_up %><br>
+    <%= f.check_box_or_confirm :close_up %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area_or_confirm :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit_or_confirm %>
+    <%= f.cancel 'cancel', to: :back %>
+  </div>
+<% end %>

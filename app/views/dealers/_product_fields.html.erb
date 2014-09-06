@@ -1,0 +1,12 @@
+<%= javascript_tag do %>
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g");
+  $(link).parent().before(content.replace(regexp, new_id));
+}
+<%- end -%>
+<div>
+  <%= f.hidden_field :id %>
+  <%= f.select :line_id, [1,2,3].collect {|n| ["line#{n}", n] } %>
+  <%= f.select :type_id, [1,2,3].collect {|n| ["type#{n}", n] } %>
+</div>

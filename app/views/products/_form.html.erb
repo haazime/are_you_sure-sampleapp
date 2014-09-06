@@ -1,0 +1,26 @@
+<%= form_for @product do |f| %>
+  <% if @product.errors.any? %>
+  <div class="error-explanation">
+    <% @product.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <%- end -%>
+  </div>
+  <%- end -%>
+  <div>
+    <%= f.label :product_line_id %>
+    <%= f.collection_select :product_line_id, ProductLine.all, :id, :name, prompt: true %>
+    <%= f.fields_for :product_line do |product_line| %>
+      <%= render 'product_line_fields', f: product_line %>
+    <%- end -%>
+  </div>
+  <div>
+    <%= f.label :product_type_id %>
+    <%= f.collection_select :product_type_id, ProductType.all, :id, :name, prompt: true %>
+    <%= f.fields_for :product_type do |product_type| %>
+      <%= render 'product_type_fields', f: product_type %>
+    <%- end -%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<%- end -%>

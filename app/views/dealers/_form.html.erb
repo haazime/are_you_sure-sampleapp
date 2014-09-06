@@ -1,0 +1,29 @@
+<%= form_for(@dealer, as: :dealer, url: { controller: :dealers }) do |f| %>
+  <% if @dealer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dealer.errors.count, "error") %> prohibited this dealer from being saved:</h2>
+
+      <ul>
+      <% @dealer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <%= f.fields_for "products[]", ProductInformation.new do |product| %>
+    <%= render 'product_fields', f: product %>
+  <%- end -%>
+  <p><%= link_to_add_product_fields "Add Product", f %></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

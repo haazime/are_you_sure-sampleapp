@@ -1,0 +1,17 @@
+<p><%= link_to 'New', new_product_path %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Product line</th>
+      <th>Product type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |p| %>
+    <tr>
+      <td><%= p.product_line.name %></td>
+      <td><%= p.product_type.name %></td>
+    </tr>
+    <%- end -%>
+  </tbody>
+</table>
