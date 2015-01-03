@@ -45,3 +45,6 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem "are_you_sure"
+
+source 'https://rails-assets.org'
+gem 'rails-assets-bootstrap'
