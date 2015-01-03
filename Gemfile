@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -45,8 +45,8 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem "twitter-bootstrap-rails"
-gem "are_you_sure"
-#gem "are_you_sure", git: 'https://github.com/haazime/are_you_sure.git'
+#gem "are_you_sure"
+gem "are_you_sure", git: 'https://github.com/haazime/are_you_sure.git'
 
 gem 'spring', group: :development
 gem 'cocoon'
