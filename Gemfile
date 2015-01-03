@@ -45,9 +45,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem "twitter-bootstrap-rails"
-#gem "are_you_sure"
-gem "are_you_sure", git: 'https://github.com/haazime/are_you_sure.git'
-
-gem 'spring', group: :development
-gem 'cocoon'
-gem 'byebug'
+gem "are_you_sure"
