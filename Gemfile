@@ -44,5 +44,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "twitter-bootstrap-rails"
 gem "are_you_sure"
