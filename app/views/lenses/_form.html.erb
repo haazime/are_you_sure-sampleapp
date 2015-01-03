@@ -13,28 +13,26 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field_or_confirm :name %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :mm, width: 2 %><br>
     <%= f.text_field_or_confirm :mm %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :f %><br>
     <%= f.text_field_or_confirm :f %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :close_up %><br>
     <%= f.check_box_or_confirm :close_up %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :note %><br>
     <%= f.text_area_or_confirm :note %>
   </div>
-  <div class="actions">
-    <%= f.submit_or_confirm %>
-    <%= f.cancel 'cancel', to: :back %>
-  </div>
+  <%= f.submit_or_confirm class: 'btn btn-default' %>
+  <%= f.cancel 'cancel', to: :back %>
 <% end %>
